@@ -23,6 +23,12 @@ body {
     --sunglow: #ffd034;
     --white: #ffffff;
     --light-blue: #cadbf8;
+    --grow-1: 1;
+    --shrink-1: 1;
+    --basis-1: 100px;
+    --grow-2: 1;
+    --shrink-2: 1;
+    --basis-2: 100px;
 }
 
 .page {
@@ -77,6 +83,15 @@ body {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    width: 200px;
+    padding: .25rem; 
+    place-items: center;
+}
+
+a.button1 {
+    width: 150px;
+    text-align: center;
+    place-content: center;
 }
 
 .button2 {
@@ -88,7 +103,7 @@ body {
     text-transform: uppercase;
 }
 
-navbar {
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -106,47 +121,212 @@ li,
     display: flex;
     align-items: baseline;
     flex-direction: row;
-    justify-content: baseline;
+    justify-content: flex-end;
+    padding: .25rem;
+    text-transform: uppercase; 
+}
+
+header a,
+header li {
+    color: var(--white);
+    text-decoration: none;
     padding: .25rem;
     text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    list-style:  none;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: last baseline;
-    align-items: last baseline;
+    justify-content:flex-start;
+    align-items: baseline;
     line-height: 1.1667;
 }
 
-img .logo {
+img.logo {
     height: 1.1667em;
 }
 
+.hero {
+  display: flex;                    /* puts image and text side by side */
+  background: #fff;
+  border-top: 4px solid var(--sunglow);    /* the gold line */
+}
+
+.hero .item {
+  flex: 1;                          /* each takes half the width */
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* fills the box without distorting */
+}
+
+/* second item = the text column */
+.hero .item:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;          /* vertically centers the text */
+  align-items: flex-start;
+  padding: 0 15px;
+}
+
+.hero h2 {
+  margin: 0 0 15px;
+  font-weight: 400;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.hero p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.button1 {
+  display: inline-block;
+  white-space: nowrap;              /* stops "Reserve a table" wrapping */
+  padding: 10px 15px;
+  background: #3e9a5c;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 8px;
+  min-width: min-content;
+
+}
+
+
 
 @media (max-width: 999px) {
-    navbar {
-        flex-direction: column;
-        align-items: center;
-    }
+    header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  /* hero stays side by side, just tighter */
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero .item:last-child {
+    padding: 0 12px;
+  }
+
+  .button1 {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
 }
+ 
 
 @media (max-width: 649px) {
-    navbar,
-    nav,
-    ul {
-        flex-wrap: wrap;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-    }
-    .logo {
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .page {
+    padding: 0 10px;
+  }
+
+  /* logo image stacked above the name, both centered */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+    gap: 5px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    height: 50px;
+ 
+
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+
+  /* nav items wrap onto a second line if they don't fit */
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  /* hero: image on top, text underneath */
+  .hero {
+    flex-direction: column;
+    min-height: 0;              /* cancels the min-height from the 1024px block */
+    padding: 15px;              /* white space around the image, like your target */
+  }
+
+  .hero .item {
+    flex: none;                 /* stops the items from collapsing in a column */
+  }
+
+  .hero img {
+    height: auto;
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero .item:last-child {
+    padding: 15px 0 0;
+    align-items: flex-start;    /* text stays left-aligned */
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .button1 {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
 }
-
-
