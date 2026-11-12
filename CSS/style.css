@@ -36,7 +36,6 @@ body {
     margin: 0 auto;
 }
 
-
 h1 {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -62,7 +61,7 @@ h2 {
 h3 {
     font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 600;
   font-style: normal;
   font-size: 1.75rem;
   line-height: 1.1667;
@@ -227,26 +226,26 @@ img.logo {
     width: 100%;
     border-bottom: 5px solid var(--sunglow);
     align-items: flex-start; 
-    width:100%;
+    width: 100%;
+    gap: 1rem;
 }
 
 .card,
 .card2 {
     display: flex;
     flex-direction: column;
-
     flex: 20%;
-    margin:  0 auto;
+    margin: 0 auto;
 }
 
 .card img,
 .card2 img {
-    max-width: 90%;
-    height: 180px;      
+    max-width: 100%;
+    /* height: 180px;       */
     object-fit: cover;     
     border-radius: 8px;
+   
 }
-
 
 h2.coffee {
     background-color: var(--light-blue);
@@ -254,6 +253,15 @@ h2.coffee {
     margin-top: 0;
     align-self: center;
     padding: 30px;
+}
+
+footer {
+    display: flex; 
+    color: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
 
 @media (max-width: 999px) {
@@ -301,8 +309,6 @@ h2.coffee {
     font-size: 0.85rem;
   }
 
-
-
   .carscntnr {
     display: inline-block;
     grid-template-columns: auto auto;
@@ -338,8 +344,6 @@ h2.coffee {
     height: 50px;
     width: auto;
     margin: 0 auto;
- 
-
   }
 
   .logo h1 {
@@ -393,5 +397,4 @@ h2.coffee {
     display: flex;
     flex-direction: column;
   }
-
 }
