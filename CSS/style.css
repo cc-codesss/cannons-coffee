@@ -266,14 +266,14 @@ img.logo {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: auto;
     gap: 5px;
     justify-content: center;
-    margin: 0 auto;
   }
 
   .logo img {
     height: 50px;
+    width: auto;
+    margin: 0 auto;
  
 
   }
