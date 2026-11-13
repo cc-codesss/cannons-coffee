@@ -205,6 +205,11 @@ img.logo {
 
 }
 
+.hero .item {
+  display: flex;
+  flex-direction: column;
+}
+
  .button2 {
   display: inline-block;
   white-space: nowrap;              /* stops "Reserve a table" wrapping */
